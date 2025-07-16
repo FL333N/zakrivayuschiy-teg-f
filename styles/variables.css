@@ -2,6 +2,8 @@
 :root {
     --contour-color: black;
     --main-body-color: #ff0000;
+    --main-body-color-hover: black;
     --core-color: white;
     --sparks-color: #ff0000;
+    --animated-fill-color: #FF0000;
 }

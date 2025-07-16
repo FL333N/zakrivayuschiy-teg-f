@@ -11,9 +11,16 @@
 
 .page {
   font-family: "Inter", sans-serif;
+  max-inline-size: 1440px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  display: grid;
+  margin: 0 20px;
+  gap: 100px;
+  justify-content: center;
 }
+
+
 
 .background {
   position: fixed;
@@ -42,10 +49,9 @@
 
 .header {
   font-family: "Press Start 2P", sans-serif;
-  max-inline-size: 700px;
   min-block-size: 368px;
+  margin-top: 100px;
   outline: 2px solid #000;
-  margin: 100px auto;
   background-color: #fff;
   display: grid;
   align-items: center;
@@ -62,29 +68,32 @@
 }
 
 .logo-group__title {
-  font-size: clamp(3.063rem, 2.71rem + 1.502vi, 4.063rem);
+  font-size: clamp(3.063rem, 2.063rem + 4.27vw, 4.063rem);
 }
 
 .logo-group__subtitle {
-  font-size: clamp(0.875rem, 0.677rem + 0.845vi, 1.438rem);
+  font-size: clamp(0.875rem, 0.313rem + 2.4vw, 1.438rem);
 }
 
 .card {
+  display: grid;
   max-inline-size: 696px;
   outline: 2px solid #000;
-  margin: 50px auto;
   background-color: #fff;
+  margin-bottom: 50px;
+}
+
+.card__container-image {
+  outline: 2px solid #000;
+  max-block-size: 696px;
 }
 
 .card__image {
-  background: url("../images/image.png");
-  max-inline-size: 100%;
-  min-block-size: 700px;
-  background-size: cover;
-  background-position: right;
-  background-repeat: no-repeat;
+  min-block-size: 696px;
+  width: 696px;
+  object-fit: cover;
+  object-position: right;
   position: relative;
-  outline: 2px solid #000;
 }
 
 @supports (text-stroke: 1px #fff) {
@@ -94,18 +103,124 @@
 }
 
 .watermark-html::before {
-  content: "</HTML>";
+  content: "</html>";
   font-family: "Press Start 2P", sans-serif;
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
   opacity: 0.5;
+  mix-blend-mode: hard-light;
   -webkit-text-stroke: 1px #fff;
   display: grid;
   justify-content: end;
   position: relative;
+  block-size: 0;
   right: 25px;
   top: 27px;
+  z-index: 2;
+}
+
+.watermark-css::before {
+  content: "<css>";
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px #fff;
+  display: grid;
+  justify-content: end;
+  position: relative;
+  block-size: 0;
+  right: 25px;
+  top: 27px;
+  z-index: 2;
+}
+
+.watermark-desigions::before {
+  content: "<desigions>";
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px #fff;
+  display: grid;
+  justify-content: end;
+  position: relative;
+  block-size: 0;
+  right: 25px;
+  top: 27px;
+  z-index: 2;
+}
+
+.watermark-care::before {
+  content: "care";
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px #fff;
+  display: grid;
+  justify-content: end;
+  position: relative;
+  block-size: 0;
+  right: 25px;
+  top: 27px;
+  z-index: 2;
+}
+
+.watermark-support::before {
+  content: "<support>";
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px #fff;
+  display: grid;
+  justify-content: end;
+  position: relative;
+  block-size: 0;
+  right: 25px;
+  top: 27px;
+  z-index: 2;
+}
+
+.watermark-lifes-style-none::before {
+  content: "<lifes-style: none;>";
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px #fff;
+  display: grid;
+  justify-content: end;
+  position: relative;
+  block-size: 0;
+  right: 25px;
+  top: 27px;
+  z-index: 2;
+}
+
+.watermark-experience::before {
+  content: "<experience>";
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px #fff;
+  display: grid;
+  justify-content: end;
+  position: relative;
+  block-size: 0;
+  right: 25px;
+  top: 27px;
+  z-index: 2;
 }
 
 .card__title {
@@ -120,6 +235,7 @@
 .card__text {
   font-size: 18px;
   line-height: 21px;
+  letter-spacing: 0%;
 }
 
 .card__article {
@@ -132,6 +248,7 @@
   display: flex;
   justify-content: end;
   margin-bottom: 25px;
+  margin-right: 25px;
   background-color: #fff;
 }
 
@@ -165,7 +282,8 @@
 }
 
 .like-icon .sparks {
-  fill: transparent;
+  fill: var(--sparks-color, #ff0000);
+  opacity: 0;
 }
 
 .like-icon .contour {
@@ -173,10 +291,12 @@
 }
 
 .like-icon .core {
+  fill: transparent;
   transition: fill 0.3s linear 0.03s;
 }
 
 .like-icon .main-body {
+  fill: transparent;
   transition: fill 0.3s linear;
 }
 
@@ -186,11 +306,41 @@
 }
 
 .like-icon:hover .main-body {
-  fill: black;
+  fill: var(--main-body-color-hover, black);
   transition: fill 0.3s linear 0.05s;
 }
 
-.is-liked {
+.like-icon:active .core {
+  fill: var(--animated-fill-color, #ff0000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animated-fill-color, #ff0000);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animated-fill-color, #ff0000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animated-fill-color, #ff0000);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animated-fill-color, #ff0000);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: scale-heart 0.3s 0.1s ease-in;
+}
+
+.like-icon.is-liked .sparks {
+  animation: animated-sparks 0.3s 0.3s ease-in;
 }
 
 .save-to-memory__container {
@@ -203,8 +353,8 @@
 .save-to-memory__button {
   border: 2px solid #000;
   min-block-size: 51px;
-  background-color: #fff;
   transition: box-shadow 0.3s ease;
+  background-color: white;
 }
 
 .save-to-memory__content {
@@ -232,9 +382,24 @@
 }
 
 .save-to-memory__button:hover {
-  background-color: #000;
   color: #fff;
   cursor: pointer;
+  background-color: #000;
+}
+
+.save-to-memory__button::after {
+  content: "";
+  position: relative;
+  width: 100%;
+  top: -12px;
+  display: flex;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.save-to-memory__button::before:hover {
+  z-index: 2;
+  background-color: #000;
 }
 
 .popup[open] {
@@ -287,4 +452,36 @@
   background-color: #000;
   color: #fff;
   cursor: pointer;
+}
+
+.grayscale {
+  filter: grayscale(0.7);
+}
+
+.saturate {
+  filter: saturate(300%);
+}
+
+.hue {
+  filter: hue-rotate(40deg);
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.sepia {
+  filter: sepia(1);
+}
+
+.blur {
+  filter: blur(15px);
+}
+
+.mix-filter {
+  filter: blur(1px) hue-rotate(64deg) invert(0.3) saturate(1.4);
+}
+
+@media (width <= 375px) {
+
 }
