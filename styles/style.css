@@ -10,7 +10,7 @@
 */
 
 .page {
-  font-family: var(--ff-inter);
+  font-family: var(--main-font);
   max-inline-size: 1440px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -18,23 +18,15 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-}
-
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
   background-image: var(--bg);
+  background-attachment: fixed;
 }
 
 .header {
   display: grid;
   align-items: center;
   justify-content: center;
-  font-family: var(--ff-PS2P);
+  font-family: var(--accent-font);
   inline-size: 100%;
   max-inline-size: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
   min-block-size: clamp(20.188rem, 19.197rem + 4.225vw, 23rem);
@@ -80,7 +72,7 @@
 
 .card__image {
   display: block;
-  height: clamp(23.438rem, 16.373rem + 30.141vw, 43.5rem);
+  aspect-ratio: 1/1;
   width: clamp(23.438rem, 16.373rem + 30.141vw, 43.5rem);
   object-fit: cover;
   object-position: right;
@@ -89,7 +81,7 @@
 .card__title {
   font-weight: 700;
   font-size: 18px;
-  min-block-size: 33px;
+  padding-block: 7px;
   display: flex;
   margin-left: 10px;
   align-items: center;
@@ -101,7 +93,7 @@
   line-height: 21px;
 }
 
-.card__article {
+.card__textarea {
   margin: 25px;
   display: grid;
   gap: 27px;
@@ -141,7 +133,7 @@
 }
 
 .button__text {
-  font-family: var(--ff-PS2P);
+  font-family: var(--accent-font);
   font-size: 14px;
   color: var(--text-color);
   mix-blend-mode: difference;
@@ -155,7 +147,7 @@
 
 .watermark-html::before {
   content: "</html>";
-  font-family: var(--ff-PS2P);
+  font-family: var(--accent-font);
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
@@ -173,7 +165,7 @@
 
 .watermark-css::before {
   content: "<css>";
-  font-family: var(--ff-PS2P);
+  font-family: var(--accent-font);
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
@@ -191,7 +183,7 @@
 
 .watermark-desigions::before {
   content: "<desigions>";
-  font-family: var(--ff-PS2P);
+  font-family: var(--accent-font);
   font-weight: 400;
   font-size: 14px;
   opacity: 0.5;
@@ -208,7 +200,7 @@
 
 .watermark-care::before {
   content: "care";
-  font-family: var(--ff-PS2P);
+  font-family: var(--accent-font);
   font-weight: 400;
   font-size: 14px;
   opacity: 0.5;
@@ -225,7 +217,7 @@
 
 .watermark-support::before {
   content: "<support>";
-  font-family: var(--ff-PS2P);
+  font-family: var(--accent-font);
   font-weight: 400;
   font-size: 14px;
   opacity: 0.5;
@@ -242,7 +234,7 @@
 
 .watermark-lifes-style-none::before {
   content: "<lifes-style: none;>";
-  font-family: var(--ff-PS2P);
+  font-family: var(--accent-font);
   font-weight: 400;
   font-size: 14px;
   opacity: 0.5;
@@ -259,7 +251,7 @@
 
 .watermark-experience::before {
   content: "<experience>";
-  font-family: var(--ff-PS2P);
+  font-family: var(--accent-font);
   font-weight: 400;
   font-size: 14px;
   opacity: 0.5;
@@ -337,7 +329,7 @@
 }
 
 .save-to-memory__container {
-  font-family: var(--ff-PS2P);
+  font-family: var(--accent-font);
   font-size: 14px;
   margin: 50px auto;
   text-align: center;
@@ -393,7 +385,7 @@
 }
 
 .popup[open] {
-  font-family: var(--ff-PS2P);
+  font-family: var(--accent-font);
   display: grid;
   grid-template-rows: 1fr min-content;
   justify-content: center;

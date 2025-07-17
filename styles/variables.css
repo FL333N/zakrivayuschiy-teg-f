@@ -29,8 +29,8 @@
     linear-gradient(#e7e7e7 0%, #1a1a1a 100%);
 
   /* text */
-  --ff-inter: "Inter", sans-serif;
-  --ff-PS2P: "Press Start 2P", sans-serif;
+  --main-font: "Inter", sans-serif; /* --ff-inter */
+  --accent-font: "Press Start 2P", sans-serif; /* --ff-PS2P */
   --fs-title-hd: clamp(3.063rem, 2.063rem + 4.27vw, 4.063rem); /* 49-65 */
   --fs-subtitle-hd: clamp(0.875rem, 0.313rem + 2.4vw, 1.438rem); /* 14-23 */
   --text-color: #fff;
