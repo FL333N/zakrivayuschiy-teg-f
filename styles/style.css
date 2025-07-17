@@ -36,8 +36,8 @@
   justify-content: center;
   font-family: var(--ff-PS2P);
   inline-size: 100%;
-  max-inline-size: 700px;
-  min-block-size: 368px;
+  max-inline-size: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
+  min-block-size: clamp(20.188rem, 19.197rem + 4.225vw, 23rem);
   margin-block: 100px;
   outline: var(--outline);
   background-color: var(--bg-color, #fff);
@@ -472,9 +472,6 @@
 }
 
 @media (width <= 375px) {
-  .header {
-    min-block-size: 323px;
-  }
   .card__title {
     padding-block: 5px;
   }
