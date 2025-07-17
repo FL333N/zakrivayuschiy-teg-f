@@ -10,52 +10,37 @@
 */
 
 .page {
-  font-family: "Inter", sans-serif;
+  font-family: var(--ff-inter);
   max-inline-size: 1440px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  display: grid;
-  margin: 0 20px;
-  gap: 100px;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
-
-
 
 .background {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: -1;
-
-  background-image: repeating-linear-gradient(
-      to bottom,
-      #d3d3d3 0,
-      #d3d3d3 2px,
-      #d3d3d300 2px,
-      #d3d3d300 4px
-    ),
-    repeating-linear-gradient(
-      to left,
-      #d3d3d3 0,
-      #d3d3d3 2px,
-      #d3d3d300 2px,
-      #d3d3d300 4px
-    ),
-    linear-gradient(#e7e7e7 0%, #1a1a1a 100%);
+  background-image: var(--bg);
 }
 
 .header {
-  font-family: "Press Start 2P", sans-serif;
-  min-block-size: 368px;
-  margin-top: 100px;
-  outline: 2px solid #000;
-  background-color: #fff;
   display: grid;
   align-items: center;
   justify-content: center;
+  font-family: var(--ff-PS2P);
+  inline-size: 100%;
+  max-inline-size: 700px;
+  min-block-size: 368px;
+  margin-block: 100px;
+  outline: var(--outline);
+  background-color: var(--bg-color, #fff);
 }
 
 .logo-group {
@@ -68,32 +53,98 @@
 }
 
 .logo-group__title {
-  font-size: clamp(3.063rem, 2.063rem + 4.27vw, 4.063rem);
+  font-size: var(--fs-title-hd);
 }
 
 .logo-group__subtitle {
-  font-size: clamp(0.875rem, 0.313rem + 2.4vw, 1.438rem);
+  font-size: var(--fs-subtitle-hd);
 }
 
 .card {
   display: grid;
-  max-inline-size: 696px;
-  outline: 2px solid #000;
-  background-color: #fff;
+  grid-template-columns: clamp(23.438rem, 16.373rem + 30.141vw, 43.5rem);
+  grid-template-rows:
+    min-content clamp(23.438rem, 16.373rem + 30.141vw, 43.5rem)
+    auto min-content;
+  outline: var(--outline);
+  background-color: var(--bg-color, #fff);
   margin-bottom: 50px;
 }
 
 .card__container-image {
-  outline: 2px solid #000;
+  position: relative;
+  overflow: hidden;
+  outline: var(--outline);
   max-block-size: 696px;
 }
 
 .card__image {
-  min-block-size: 696px;
-  width: 696px;
+  display: block;
+  height: clamp(23.438rem, 16.373rem + 30.141vw, 43.5rem);
+  width: clamp(23.438rem, 16.373rem + 30.141vw, 43.5rem);
   object-fit: cover;
   object-position: right;
-  position: relative;
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 18px;
+  min-block-size: 33px;
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+  word-break: break-word;
+}
+
+.card__text {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.card__article {
+  margin: 25px;
+  display: grid;
+  gap: 27px;
+  word-break: break-word;
+}
+
+.card__container-like-button {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 25px;
+  margin-right: 25px;
+  background-color: var(--bg-color, #fff);
+}
+
+.card__icon-button {
+  display: flex;
+  margin-right: 6px;
+  align-items: center;
+}
+
+.card__like-button {
+  border: var(--outline);
+  inline-size: 130px;
+  block-size: 38px;
+  transition: box-shadow 0.3s ease, background-color 0.5s ease-in-out;
+}
+
+.card__like-button:focus {
+  outline: none;
+  box-shadow: var(--shadow);
+}
+
+.card__like-button:hover {
+  background-color: var(--bg-color-effect, #000);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.button__text {
+  font-family: var(--ff-PS2P);
+  font-size: 14px;
+  color: var(--text-color);
+  mix-blend-mode: difference;
 }
 
 @supports (text-stroke: 1px #fff) {
@@ -104,7 +155,7 @@
 
 .watermark-html::before {
   content: "</html>";
-  font-family: "Press Start 2P", sans-serif;
+  font-family: var(--ff-PS2P);
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
@@ -122,7 +173,7 @@
 
 .watermark-css::before {
   content: "<css>";
-  font-family: "Press Start 2P", sans-serif;
+  font-family: var(--ff-PS2P);
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
@@ -140,7 +191,7 @@
 
 .watermark-desigions::before {
   content: "<desigions>";
-  font-family: "Press Start 2P", sans-serif;
+  font-family: var(--ff-PS2P);
   font-weight: 400;
   font-size: 14px;
   opacity: 0.5;
@@ -157,7 +208,7 @@
 
 .watermark-care::before {
   content: "care";
-  font-family: "Press Start 2P", sans-serif;
+  font-family: var(--ff-PS2P);
   font-weight: 400;
   font-size: 14px;
   opacity: 0.5;
@@ -174,7 +225,7 @@
 
 .watermark-support::before {
   content: "<support>";
-  font-family: "Press Start 2P", sans-serif;
+  font-family: var(--ff-PS2P);
   font-weight: 400;
   font-size: 14px;
   opacity: 0.5;
@@ -191,7 +242,7 @@
 
 .watermark-lifes-style-none::before {
   content: "<lifes-style: none;>";
-  font-family: "Press Start 2P", sans-serif;
+  font-family: var(--ff-PS2P);
   font-weight: 400;
   font-size: 14px;
   opacity: 0.5;
@@ -208,7 +259,7 @@
 
 .watermark-experience::before {
   content: "<experience>";
-  font-family: "Press Start 2P", sans-serif;
+  font-family: var(--ff-PS2P);
   font-weight: 400;
   font-size: 14px;
   opacity: 0.5;
@@ -221,64 +272,6 @@
   right: 25px;
   top: 27px;
   z-index: 2;
-}
-
-.card__title {
-  font-weight: 700;
-  font-size: 18px;
-  min-block-size: 33px;
-  display: flex;
-  margin-left: 10px;
-  align-items: center;
-}
-
-.card__text {
-  font-size: 18px;
-  line-height: 21px;
-  letter-spacing: 0%;
-}
-
-.card__article {
-  margin: 25px;
-  display: grid;
-  gap: 27px;
-}
-
-.card__container-like-button {
-  display: flex;
-  justify-content: end;
-  margin-bottom: 25px;
-  margin-right: 25px;
-  background-color: #fff;
-}
-
-.card__icon-button {
-  display: flex;
-  margin-right: 6px;
-  align-items: center;
-}
-
-.card__like-button {
-  border: 2px solid #000;
-  inline-size: 130px;
-  block-size: 38px;
-  transition: box-shadow 0.3s ease;
-}
-
-.card__like-button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 #000;
-}
-
-.card__like-button:hover {
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
-.button__text {
-  font-family: "Press Start 2P", sans-serif;
-  font-size: 14px;
 }
 
 .like-icon .sparks {
@@ -344,17 +337,17 @@
 }
 
 .save-to-memory__container {
-  font-family: "Press Start 2P", sans-serif;
+  font-family: var(--ff-PS2P);
   font-size: 14px;
   margin: 50px auto;
   text-align: center;
 }
 
 .save-to-memory__button {
-  border: 2px solid #000;
+  border: var(--outline);
   min-block-size: 51px;
-  transition: box-shadow 0.3s ease;
-  background-color: white;
+  background-color: var(--bg-color, #fff);
+  transition: box-shadow 0.3s ease, background-color 0.5s ease-in-out;
 }
 
 .save-to-memory__content {
@@ -369,22 +362,19 @@
 .save-to-memory__floppy {
   inline-size: 21px;
   block-size: 21px;
-  fill: #000;
-}
-
-.save-to-memory__button:hover .save-to-memory__floppy {
   fill: #fff;
+  mix-blend-mode: difference;
 }
 
 .save-to-memory__button:focus {
   outline: none;
-  box-shadow: 2px 2px 0 #000;
+  box-shadow: var(--shadow);
 }
 
 .save-to-memory__button:hover {
-  color: #fff;
+  color: var(--text-color);
   cursor: pointer;
-  background-color: #000;
+  background-color: var(--bg-color-effect, #000);
 }
 
 .save-to-memory__button::after {
@@ -394,16 +384,16 @@
   top: -12px;
   display: flex;
   z-index: 2;
-  background-color: #fff;
+  background-color: var(--bg-color, #fff);
 }
 
 .save-to-memory__button::before:hover {
   z-index: 2;
-  background-color: #000;
+  background-color: var(--bg-color-effect, #000);
 }
 
 .popup[open] {
-  font-family: "Press Start 2P";
+  font-family: var(--ff-PS2P);
   display: grid;
   grid-template-rows: 1fr min-content;
   justify-content: center;
@@ -415,7 +405,7 @@
 }
 
 .popup[open]::backdrop {
-  background-color: rgb(0 0 0 / 0.75);
+  background-color: var(--bg-popup-backdrop, rgb(0 0 0 / 0.75));
 }
 
 .popup__content {
@@ -426,9 +416,9 @@
 }
 
 .popup__close-button {
-  border: 2px solid #000;
+  border: var(--outline);
   min-block-size: 38px;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, background-color 0.5s ease-in-out;
 }
 
 .popup__text {
@@ -445,43 +435,56 @@
 
 .popup__close-button:focus {
   outline: none;
-  box-shadow: 2px 2px 0 #000;
+  box-shadow: var(--shadow);
 }
 
 .popup__close-button:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--bg-color-effect, #000);
   cursor: pointer;
 }
 
 .grayscale {
-  filter: grayscale(0.7);
+  filter: var(--grayscale);
 }
 
 .saturate {
-  filter: saturate(300%);
+  filter: var(--saturate);
 }
 
 .hue {
-  filter: hue-rotate(40deg);
+  filter: var(--hue);
 }
 
 .invert {
-  filter: invert(1);
+  filter: var(--invert);
 }
 
-.sepia {
-  filter: sepia(1);
+.brightness {
+  filter: var(--brightness);
 }
 
 .blur {
-  filter: blur(15px);
+  filter: var(--blur);
 }
 
 .mix-filter {
-  filter: blur(1px) hue-rotate(64deg) invert(0.3) saturate(1.4);
+  filter: var(--mix-filter);
 }
 
 @media (width <= 375px) {
+  .header {
+    min-block-size: 323px;
+  }
+  .card__title {
+    padding-block: 5px;
+  }
 
+  .card__container-image {
+    inline-size: 375px;
+    block-size: 375px;
+  }
+  .save-to-memory__content {
+    flex-direction: column;
+    inline-size: 306px;
+  }
 }

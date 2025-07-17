@@ -1,9 +1,51 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    --contour-color: black;
-    --main-body-color: #ff0000;
-    --main-body-color-hover: black;
-    --core-color: white;
-    --sparks-color: #ff0000;
-    --animated-fill-color: #FF0000;
+  /* heart */
+  --contour-color: black;
+  --main-body-color: #ff0000;
+  --main-body-color-hover: black;
+  --core-color: white;
+  --sparks-color: #ff0000;
+  --animated-fill-color: #ff0000;
+
+  /* bg */
+  --bg-color: #fff;
+  --bg-color-effect: #000;
+  --bg-popup-backdrop: rgb(0 0 0 / 0.75);
+  --bg: repeating-linear-gradient(
+      to bottom,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      #d3d3d300 2px,
+      #d3d3d300 4px
+    ),
+    repeating-linear-gradient(
+      to left,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      #d3d3d300 2px,
+      #d3d3d300 4px
+    ),
+    linear-gradient(#e7e7e7 0%, #1a1a1a 100%);
+
+  /* text */
+  --ff-inter: "Inter", sans-serif;
+  --ff-PS2P: "Press Start 2P", sans-serif;
+  --fs-title-hd: clamp(3.063rem, 2.063rem + 4.27vw, 4.063rem); /* 49-65 */
+  --fs-subtitle-hd: clamp(0.875rem, 0.313rem + 2.4vw, 1.438rem); /* 14-23 */
+  --text-color: #fff;
+
+  /* other */
+  --outline: 2px solid #000;
+  --shadow: 2px 2px 0 #000;
+
+  /* filters */
+
+  --grayscale: grayscale(0.7);
+  --saturate: saturate(300%);
+  --hue: hue-rotate(40deg);
+  --invert: invert(0.2) grayscale(0.5) brightness(0.8);
+  --brightness: brightness(0.6);
+  --blur: blur(15px);
+  --mix-filter: blur(1px) hue-rotate(64deg) invert(0.3) saturate(1.4);
 }
