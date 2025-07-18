@@ -1,1 +1,1 @@
-# https://github.com/FL333N/zakrivayuschiy-teg-f
+# https://fl333n.github.io/zakrivayuschiy-teg-f/
