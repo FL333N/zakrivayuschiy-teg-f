@@ -128,9 +128,9 @@ button:hover::before {
 
 .card__title {
   font-size: 18px;
-  padding-block: 7px;
+  padding-block: 5px;
   display: flex;
-  margin-left: 10px;
+  margin-inline: 10px;
   align-items: center;
   word-break: break-word;
   font-variation-settings: "wght" var(--fn-wdht-title);
@@ -166,6 +166,10 @@ button:hover::before {
 
 .card__icon-button:focus {
   box-shadow: none;
+}
+
+.card__icon-button::before {
+  content: none;
 }
 
 .card__icon-button:hover {
@@ -362,10 +366,6 @@ button:hover::before {
 }
 
 @media (width <= 375px) {
-  .card__title {
-    padding-block: 5px;
-  }
-
   .card__container-image {
     inline-size: 375px;
     block-size: 375px;
