@@ -12,7 +12,6 @@
 .page {
   font-family: var(--main-font);
   font-variation-settings: "wght" var(--fn-wdht-text);
-  /* max-inline-size: 1440px; */
   min-inline-size: 320px;
   min-block-size: 100dvb;
   display: flex;
@@ -30,7 +29,7 @@
   font-family: var(--accent-font);
   inline-size: 100%;
   max-inline-size: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
-  min-block-size: clamp(20.188rem, 19.197rem + 4.225vw, 23rem);
+  padding-block: clamp(7.625rem, 7.4489rem + 0.7512vw, 8.125rem);;
   margin-block: 100px;
   outline: var(--outline);
   background-color: var(--bg-color, #fff);
@@ -83,8 +82,6 @@ button:hover {
 
 button::before {
   content: "";
-  /* inline-size: inherit;
-  block-size: inherit; */
   width: 100%;
   height: 100%;
   position: absolute;
@@ -161,11 +158,13 @@ button:hover::before {
   display: flex;
   margin-right: 6px;
   align-items: center;
-  outline: none;
+  outline: 2px solid transparent;
+  transition: outline ease-in-out 0.3s;
 }
 
 .card__icon-button:focus {
   box-shadow: none;
+  outline: var(--outline);
 }
 
 .card__icon-button::before {
@@ -197,7 +196,7 @@ button:hover::before {
   z-index: 2;
 }
 
-@supports (text-stroke: 1px #fff or -webkit-text-stroke) {
+@supports (text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff) {
   .watermark {
     text-shadow: none;
     -webkit-text-stroke: 1px #fff;
